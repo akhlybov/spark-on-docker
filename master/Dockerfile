@@ -8,9 +8,7 @@ ENV SPARK_MASTER_LOG /spark/logs
 
 EXPOSE 8080 7077 6066
 
+ENV ZOOKEEPER_URLS None
 ENV RECOVERY_MODE ZOOKEEPER
-ENV ZOOKEEPER_URLS localhost:2181
 
-ENV SPARK_DAEMON_JAVA_OPTS '-Dspark.deploy.recoveryMode="${RECOVERY_MODE}" -Dspark.deploy.zookeeper.url="$ZOOKEEPER_URL"'
-
-ENTRYPOINT /bin/bash /spark/sbin/start-master.sh 
+ENTRYPOINT /bin/bash run-master.sh
