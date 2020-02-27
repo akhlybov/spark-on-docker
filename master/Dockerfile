@@ -1,6 +1,8 @@
-FROM akhlybov/spark-base:0.2
+FROM akhlybov/spark-base:0.3
 
 LABEL author="hlybov@outlook.com"
+
+ADD run-master.sh .
 
 ENV SPARK_MASTER_PORT 7077
 ENV SPARK_MASTER_WEBUI_PORT 8080
