@@ -4,7 +4,7 @@ Images to run Spark and Worker classes.
 
 **To start Master:**
 ```bash
-docker run --network host --name smaster -d -e "RECOVERY_MODE=ZOOKEEPER" akhlybov/spark-master:0.5
+docker run --network host --name spark-master -d -e "RECOVERY_MODE=ZOOKEEPER" akhlybov/spark-master:0.5
 ```
 Parameters:
 1. SPARK_MASTER_HOST (host Spark Master will listen on)
@@ -16,7 +16,7 @@ Parameters:
 
 **To start Worker:**
 ```bash
-docker run --network host -d akhlybov/spark-worker:0.1
+docker run --network host --name spark-worker -d akhlybov/spark-worker:0.1
 ```
 Parameters:
 1. MASTER_URL (required; default is set to localhost:7077)
